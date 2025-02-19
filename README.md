@@ -1,19 +1,11 @@
 # Live Glossary Search
 
-**Contributors:** Abdel  
-**Tags:** glossary, live search, glossary plugin, dictionary, searchable glossary  
-**Requires at least:** 5.0  
-**Tested up to:** 6.4  
-**Requires PHP:** 7.2  
-**Stable tag:** 1.1  
-**License:** GPL-2.0+  
-**License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
 ## Description
 
-Live Glossary Search is a powerful WordPress plugin that allows you to create a searchable glossary with custom glossary items. The plugin includes a live search functionality, making it easier for users to find definitions quickly.
+Live Glossary Search is a powerful WordPress plugin that allows you to create a searchable glossary with custom glossary items. The plugin includes live search functionality, making it easier for users to find definitions quickly.
 
-### Features
+## Features
 - Custom post type: "Glossary Item"
 - Live search functionality
 - Alphabetical grouping of glossary terms
@@ -49,9 +41,13 @@ Yes! You can disable this in the **Glossary Settings** under WordPress Admin > S
 
 ## Changelog
 
+### 1.2
+- Added security enhancements (nonce verification, escaping, and sanitization)
+- Improved admin settings with proper capability checks
+- Standardized function prefixes to prevent conflicts
+
 ### 1.1
 - Improved description and functionality
-- Removed `riverbend_glossary_live_search` shortcode
 - Updated author information
 
 ### 1.0
@@ -62,4 +58,4 @@ Yes! You can disable this in the **Glossary Settings** under WordPress Admin > S
 [Upwork Profile](https://www.upwork.com/freelancers/~01e0ebea64e80eb1de)
 
 ## License
-This plugin is licensed under the GPL-2.0+ license. See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for details.
+This plugin is licensed under the GPL-2.0+ license. See [License](https://www.gnu.org/licenses/gpl-2.0.html) for details.
