@@ -5,7 +5,7 @@ Tags: glossary, live search, glossary plugin, dictionary, searchable glossary
 Requires at least: 5.0  
 Tested up to: 6.4  
 Requires PHP: 7.2  
-Stable tag: 1.1  
+Stable tag: 1.2  
 License: GPL-2.0+  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -47,9 +47,13 @@ Yes! You can disable this in the **Glossary Settings** under WordPress Admin > S
 
 == Changelog ==
 
+= 1.2 =
+* Added security enhancements (nonce verification, escaping, and sanitization)
+* Improved admin settings with proper capability checks
+* Standardized function prefixes to prevent conflicts
+
 = 1.1 =
 * Improved description and functionality
-* Removed `riverbend_glossary_live_search` shortcode
 * Updated author information
 
 = 1.0 =

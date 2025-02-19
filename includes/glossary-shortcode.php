@@ -16,9 +16,8 @@ function glossary_shortcode($atts) {
             <div class="col-md-12" id="glossary-list">
                 <?php
                 // Fetch and display all posts by first letter
-                // Modify this loop as needed to retrieve glossary posts
                 $args = array(
-                    'post_type'      => 'glossary_item', // Adjust the post type
+                    'post_type'      => 'glossary_item',
                     'posts_per_page' => -1,
                     'orderby'        => 'title',
                     'order'          => 'ASC',
@@ -33,43 +32,34 @@ function glossary_shortcode($atts) {
                     
                     while ($query->have_posts()) :
                         $query->the_post();
-                        $title = get_the_title();
-                        $permalink = get_permalink();
-                
+                        $title = esc_html(get_the_title());
+                        $permalink = esc_url(get_permalink());
+
                         // Check if "_glossary_link" custom field is set
-                        $custom_link = get_post_meta(get_the_ID(), '_glossary_link', true);
-                
-                        // Use the custom link if available, otherwise use the permalink
+                        $custom_link = esc_url(get_post_meta(get_the_ID(), '_glossary_link', true));
                         $link = !empty($custom_link) ? $custom_link : $permalink;
                 
                         $first_letter = strtoupper(substr($title, 0, 1));
                 
                         if ($first_letter !== $current_letter) {
                             if ($current_letter !== '') {
-                                echo '</div>'; // Close the previous group
-                                echo '</div>'; // Close the previous glossary-group-wrapper
+                                echo '</div></div>';
                             }
                             echo '<div class="glossary-group-wrapper row">';
-                            echo '<h3 class="col-md-2 group-title">' . $first_letter . '</h3>';
+                            echo '<h3 class="col-md-2 group-title">' . esc_html($first_letter) . '</h3>';
                             echo '<div class="col-md-10 glossary-group">';
                             $current_letter = $first_letter;
                         }
-                
-                        // Output the post title as a link
-                        echo '<p><a href="' . esc_url($link) . '">' . $title . '</a></p>';
+
+                        echo '<p><a href="' . esc_url($link) . '">' . esc_html($title) . '</a></p>';
                     endwhile;
-                    echo '</div>'; // Close the last group
-
-                    echo '</div>'; // Close glossary-groups
-
-                    echo '</div>'; // Close glossary-group-wrapper
+                    echo '</div></div>';
                 endif;
                 wp_reset_postdata();
                 ?>
             </div>
         </div>
     </div>    
-   
     <?php
     return ob_get_clean();
 }
