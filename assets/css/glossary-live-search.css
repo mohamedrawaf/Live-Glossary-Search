@@ -1,0 +1,23 @@
+.glossary-group-wrapper {
+    padding: 20px 0px;
+    border-bottom: 1px solid #d7d7d7;
+}
+form#glossary-search-form #search-input {
+    height: 50px;
+    padding: 30px;
+}
+#glossary-list {
+    margin-top: 20px;
+}
+#glossary-list h3 {
+    margin-top: 15px;
+}
+form#glossary-search-form #search-input {
+    width: -webkit-fill-available;
+}
+.glossary-group a {
+    text-decoration: none;
+}
+.glossary-group a:hover {
+    color: #ff6200;
+}
