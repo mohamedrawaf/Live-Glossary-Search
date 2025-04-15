@@ -32,6 +32,30 @@ Live Glossary Search is a powerful WordPress plugin that allows you to create a 
 = Display Live Search Glossary =
 `[glossary_search_shortcode]`
 
+= Shortcode Attributes =
+
+The `[glossary_search_shortcode]` shortcode accepts the following optional attributes:
+
+* `show_excerpt` (default: `false`): Set to `true` to display the excerpt of each glossary item beneath the title.
+  
+  Example:  
+  `[glossary_search_shortcode show_excerpt="true"]`
+
+* `show_letters` (default: `false`): Set to `true` to display an A-Z alphabetical filter to navigate glossary items by their first letter.
+
+  Example:  
+  `[glossary_search_shortcode show_letters="true"]`
+
+* `only_active_letters` (default: `false`): Set to `true` to display only those letters (A-Z) that have glossary items assigned to them.
+
+  Example:  
+  `[glossary_search_shortcode only_active_letters="true"]`
+
+* `post_type` (default: `glossary_item`): Define the custom post type you wish to display. By default, it uses `glossary_item`, but you can use this attribute to display items from any custom post type.
+
+  Example:  
+  `[glossary_search_shortcode post_type="my_custom_post_type"]`
+
 == Screenshots ==
 1. Glossary List View – Displays glossary terms grouped alphabetically.
 2. Live Search in Action – Search for terms in real-time.
@@ -51,6 +75,8 @@ Yes! You can disable this in the **Glossary Settings** under WordPress Admin > S
 * Added security enhancements (nonce verification, escaping, and sanitization)
 * Improved admin settings with proper capability checks
 * Standardized function prefixes to prevent conflicts
+* Added the ability to define a custom post type for the glossary shortcode
+* Added new shortcode attributes: `show_excerpt`, `show_letters`, `only_active_letters`, `post_type`
 
 = 1.1 =
 * Improved description and functionality
@@ -59,9 +85,9 @@ Yes! You can disable this in the **Glossary Settings** under WordPress Admin > S
 = 1.0 =
 * Initial release
 
-== Author ==
+== Author ==  
 **Abdel**  
 [Upwork Profile](https://www.upwork.com/freelancers/~01e0ebea64e80eb1de)
 
-== License ==
+== License ==  
 This plugin is licensed under the GPL-2.0+ license. See [License](https://www.gnu.org/licenses/gpl-2.0.html) for details.
