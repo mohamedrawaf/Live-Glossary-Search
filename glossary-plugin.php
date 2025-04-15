@@ -22,11 +22,11 @@ require_once('includes/glossary-shortcode.php');
  * Enqueue CSS and JS files
  */
 function glossary_enqueue_resources() {
-    wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+    wp_enqueue_style('glossary-bootstrap-css', plugin_dir_url(__FILE__) . 'assets/css/bootstrap.min.css');
     wp_enqueue_style('glossary-css', plugin_dir_url(__FILE__) . 'assets/css/glossary.css');
     
     wp_enqueue_script('jquery');
-    wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'), '4.5.2', true);
+    wp_enqueue_script('glossary-bootstrap-js', plugin_dir_url(__FILE__) . 'assets/js/bootstrap.min.js', array('jquery'), '4.5.2', true);
     
     // Custom JS
     wp_enqueue_script('glossary-js', plugin_dir_url(__FILE__) . 'assets/js/glossary-live-search.js', array('jquery'), '1.1.0', true);

@@ -31,6 +31,17 @@ function glossary_settings_page_content() {
 }
 
 function glossary_settings_init() {
-    register_setting('glossary_settings_group', 'glossary_append_whatis_enabled');
+    register_setting(
+        'glossary_settings_group',           // Option group
+        'glossary_append_whatis_enabled',    // Option name
+        array(
+            'sanitize_callback' => 'glossary_sanitize_checkbox'
+        )
+    );
 }
+
+function glossary_sanitize_checkbox($value) {
+    return ($value === '1') ? '1' : '0';
+}
+
 add_action('admin_init', 'glossary_settings_init');
