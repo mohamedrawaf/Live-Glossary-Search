@@ -29,7 +29,7 @@ function glossary_enqueue_resources() {
     wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'), '4.5.2', true);
     
     // Custom JS
-    wp_enqueue_script('glossary-js', plugin_dir_url(__FILE__) . 'assets/js/glossary.js', array('jquery'), '1.1.0', true);
+    wp_enqueue_script('glossary-js', plugin_dir_url(__FILE__) . 'assets/js/glossary-live-search.js', array('jquery'), '1.1.0', true);
 }
 add_action('wp_enqueue_scripts', 'glossary_enqueue_resources');
 
@@ -62,7 +62,7 @@ function glossary_modify_single_title($title) {
     if (is_singular('glossary_item')) {
         $append_whatis_enabled = get_option('glossary_append_whatis_enabled', true);
         if ($append_whatis_enabled) {
-            return esc_html__('What is: ', 'glossary') . esc_html($title);
+            return esc_html__('What is: ', 'Live-Glossary-Search') . esc_html($title);
         }
     }
     return $title;

@@ -2,8 +2,8 @@
 // Register Glossary Item custom post type
 function glossary_item_post_type() {
     $labels = array(
-        'name'          => __('Glossary Items', 'glossary-plugin'),
-        'singular_name' => __('Glossary Item', 'glossary-plugin'),
+        'name'          => __('Glossary Items', 'Live-Glossary-Search'),
+        'singular_name' => __('Glossary Item', 'Live-Glossary-Search'),
     );
 
     $args = array(
@@ -21,7 +21,7 @@ add_action('init', 'glossary_item_post_type');
 
 // Add custom metabox for Link field
 function glossary_item_link_metabox() {
-    add_meta_box('glossary_link', __('Link Override', 'glossary-plugin'), 'glossary_link_callback', 'glossary_item', 'normal');
+    add_meta_box('glossary_link', __('Link Override', 'Live-Glossary-Search'), 'glossary_link_callback', 'glossary_item', 'normal');
 }
 add_action('add_meta_boxes', 'glossary_item_link_metabox');
 
@@ -29,7 +29,7 @@ function glossary_link_callback($post) {
     wp_nonce_field('glossary_save_link', 'glossary_link_nonce');
     $link = get_post_meta($post->ID, '_glossary_link', true);
     ?>
-    <label for="glossary-link"><?php esc_html_e('Link Override:', 'glossary-plugin'); ?></label>
+    <label for="glossary-link"><?php esc_html_e('Link Override:', 'Live-Glossary-Search'); ?></label>
     <input type="text" id="glossary-link" name="glossary_link" value="<?php echo esc_attr($link); ?>" class="widefat">
     <?php
 }
@@ -50,7 +50,7 @@ function modify_single_post_title($title) {
     if (is_singular('glossary_item')) {
         $append_whatis_enabled = get_option('glossary_append_whatis_enabled', true);
         if ($append_whatis_enabled) {
-            return __('What is: ', 'glossary-plugin') . $title;
+            return __('What is: ', 'Live-Glossary-Search') . $title;
         }        
     }
     return $title;
