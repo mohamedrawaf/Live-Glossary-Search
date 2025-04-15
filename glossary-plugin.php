@@ -62,7 +62,7 @@ function glossary_modify_single_title($title) {
     if (is_singular('glossary_item')) {
         $append_whatis_enabled = get_option('glossary_append_whatis_enabled', true);
         if ($append_whatis_enabled) {
-            return esc_html__('What is: ', 'glossary') . esc_html($title);
+            return esc_html__('What is: ', 'Live-Glossary-Search') . esc_html($title);
         }
     }
     return $title;
